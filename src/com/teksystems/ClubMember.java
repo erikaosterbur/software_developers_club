@@ -11,6 +11,10 @@ public class ClubMember {
         this.favoriteLanguage = favoriteLanguage;
     }
 
+    public ClubMember() {
+
+    }
+
     public String getName() {
         return name;
     }

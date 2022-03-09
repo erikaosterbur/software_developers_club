@@ -1,11 +1,43 @@
 package com.teksystems;
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SoftwareDeveloperClub {
+    public SoftwareDeveloperClub() {
+        readFile();
+    }
 
+    ArrayList<ClubMember> members = new ArrayList<>();
+    public void readFile(){
+        File myObj = new File("members.txt");
+        try(Scanner myReader = new Scanner(myObj);){
+            String dudLine = myReader.nextLine();
+            while(myReader.hasNextLine()){
+                String line = myReader.nextLine();
+                String[] arr = line.split("[*]+");
+                members.add(new ClubMember(arr[0], (arr[1] + ", " + arr[2]), arr[3]));
+            }
+        } catch (FileNotFoundException e){
+            System.out.println("An error occurred");
+            e.printStackTrace();
+        }
+    }
+
+    public void displayMembers(){
+        members.forEach(m -> {
+            System.out.printf("Member Name: %s\n Location: %s\n Favorite Language: %s\n", m.getName(), m.getLocation(), m.getFavoriteLanguage());
+        });
+    }
+
+    public void removeMember(Scanner input){
+        //sout which member do you want to remove?
+    }
+
+    public void addMember(Scanner input){
+        //sout what is the member's name?
+        //sout where is the member located (city, state)?
+        //sout what is the member's favorite programming language?
+    }
 }
