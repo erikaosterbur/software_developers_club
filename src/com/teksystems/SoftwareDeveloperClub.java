@@ -40,8 +40,17 @@ public class SoftwareDeveloperClub {
     }
 
     public void addMember(Scanner input){
-        //sout what is the member's name?
-        //sout where is the member located (city, state)?
-        //sout what is the member's favorite programming language?
+        System.out.println("What is the member's name?");
+        input.nextLine();
+        String newName = input.nextLine();
+
+        System.out.println("What is the member's location? City, State");
+        String newLocation = input.nextLine();
+
+
+        System.out.println("What is the member's favorite programming language?");
+        String newLanguage = input.nextLine();
+
+        members.add(new ClubMember(newName, newLocation, newLanguage));
     }
 }
