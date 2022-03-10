@@ -32,7 +32,11 @@ public class SoftwareDeveloperClub {
     }
 
     public void removeMember(Scanner input){
-        //sout which member do you want to remove?
+        System.out.println("Which member would you like to remove? Enter number:");
+        for(int i = 0; i < members.size(); i++){
+            System.out.printf("%d. %s\n", i+1, members.get(i).getName());
+        }
+        members.remove(input.nextInt() - 1);
     }
 
     public void addMember(Scanner input){

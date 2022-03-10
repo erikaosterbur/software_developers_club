@@ -3,7 +3,7 @@ package com.teksystems;
 import java.util.Scanner;
 
 public class ClubMemberApp {
-    public static void ClubMemberApp(){
+    public static void main(String[] args){
         SoftwareDeveloperClub club = new SoftwareDeveloperClub();
         Scanner input = new Scanner(System.in);
         loop:
@@ -25,6 +25,5 @@ public class ClubMemberApp {
                     System.out.println("Hey, that was not a valid option. Please try again.");
             }
         }
-
     }
 }
